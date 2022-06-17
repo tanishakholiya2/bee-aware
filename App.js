@@ -1,49 +1,69 @@
 import * as React from 'react';
-<<<<<<< HEAD
 import {Button, View, Text} from 'react-native';
 import Calculator from './calculator.js';
 import CarbonFootprint from './carbonFootprintInfo.js';
-=======
-import { Button, View, Text, Image } from 'react-native';
->>>>>>> d7a1f41410349121c93b4320549b65e9d20dd237
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+function Learn({navigation}) {
+  return(
+    <View style={{flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd'}}>
+      <Button
+        color="#083316"
+        title="What is a carbon footprint?"
+        onPress={() => navigation.navigate('WhatIsCarbonFootprint')}
+      />
+
+      <Button 
+        color="#083316"
+        title="How do you reduce your carbon footprint?"
+        onPress={() => navigation.navigate('HowToReduce')}
+      />
+
+      <Button
+        color="#083316"
+        title="Why does carbon footprint matter?"
+        onPress={() => navigation.navigate('WhyShouldYouCare')}
+      />
+    </View>
+  )
+}
+
+function WhatsCarbonFootprint({navigation}) {
+  return(
+    <Text> A carbon footprint measures the impact you leave on the environment. 
+    Your carbon footprint is measured by multiple factors, including the amount of greenhouse gases
+    emitted by your actions. The food you eat, clothes you buy, things that you throw away, and how you commute to places all
+    contribute to your carbon footprint.
+    </Text>
+  )
+}
+
+function HowToReduce({navigation}) {
+  return(
+    <Text> hi </Text>
+  )
+}
+
+function WhyShouldYouCare({navigation}) {
+  return(
+    <Text> hi </Text>
+  )
+}
+
 
 function HomeScreen({navigation}) {
   const staticImg = require("./assets/fonts/earth.png");
   return (
-<<<<<<< HEAD
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'green' }}>
       <Text>Bee Aware</Text>
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate('Info')}
-      />
-=======
-    <View style={{ flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd' }}>
-      <Text style = {{color: "#083316", fontSize: 50, fontFamily: 'blow', fontStyle: 'normal'}}>Bee Aware</Text>
-      <Button
-        color="#083316"
-        title="Start"
         onPress={() => navigation.navigate('Main')}
       />
-      <Image 
-        source = {staticImg}
-        style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
-       />
->>>>>>> d7a1f41410349121c93b4320549b65e9d20dd237
-    </View>
-  );
-}
-
-function Calculator({navigation}) {
-  return (
-    <View style={{flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd'}}>
-      <Text style = {{color: "#083316", fontSize: 50, fontFamily: 'blow'}}>Calculate Your Carbon Footprint</Text>
       <Button
-        color="#083316"
-        title="Main Page"
-        onPress={() => navigation.navigate('Main')}
+        title="Learn about carbon footprint"
+        onPress={() => navigation.navigate('Learn')}
       />
     </View>
   );
@@ -109,10 +129,11 @@ function App() {
         <Stack.Screen name="Main" component = {MainScreen} />
         <Stack.Screen name="Calculator" component = {Calculator} />
         <Stack.Screen name = "Goal" component = {SubmitPersonalScreen} />
-<<<<<<< HEAD
         <Stack.Screen name="CarbonFootprint" component = {CarbonFootprint} />
-=======
->>>>>>> d7a1f41410349121c93b4320549b65e9d20dd237
+        <Stack.Screen name="Learn" component = {Learn} />
+        <Stack.Screen name="WhatIsCarbonFootprint" component = {WhatsCarbonFootprint}/>
+        <Stack.Screen name="HowToReduce" component={HowToReduce}/>
+        <Stack.Screen name="WhyShouldYouCare" component={WhyShouldYouCare}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

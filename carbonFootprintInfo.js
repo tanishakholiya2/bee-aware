@@ -37,9 +37,9 @@ export default function CarbonFootprint({route, navigation}) {
         text = text + 'very high. Try to take action to reduce your carbon footprint!'
     }
     return(
-        <View>
-        <Text style={{textAlign: 'center'}}>your carbon footprint is {carbonFootprint}</Text> 
-        <Text style={{textAlign: 'center'}}>{text}</Text>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#b4cebd'}}>
+        <Text style={{}}>your carbon footprint is {carbonFootprint}</Text> 
+        <Text style={{}}>{text}</Text>
         </View>
     ) 
 }

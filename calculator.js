@@ -22,66 +22,66 @@ class Calculator extends React.Component {
     }
     render() {
         return(
-        <View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#b4cebd'}}>
             <Text> What is your monthly electric bill?</Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({electricBill:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
             />
             <Text> What is your monthly gas bill?</Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({gasBill:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
             />
             <Text> What is your monthly oil bill?</Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({oilBill:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
             />
             <Text> What is your car's yearly mileage?</Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({mileage:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
             />
             <Text> How many flights under 4 hours have you taken in the last year? </Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({flightsBelow:text})}}
-            style={{width:500,borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
+            style={{width:500,borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
             />
             <Text> How many flights over 4 hours have you taken in the last year? </Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({flightsAbove:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
             />
             <Text> Do you recycle newspaper? </Text>
             <TextInput
             placeholder="1 for yes, 2 for no" 
             onChangeText={(text)=>{this.setState({recycleNewspaper:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
             />
             <Text> Do you recycle aluminum? </Text>
             <TextInput
             placeholder="1 for yes, 2 for no" 
             onChangeText={(text)=>{this.setState({recycleAluminum:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
             />
             <Text> How often do you eat meat? </Text>
             <TextInput
             placeholder="1 for never, 2 for a few times a month, 2 for a few times a week, 4 for everyday" 
             onChangeText={(text)=>{this.setState({meat:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
             />
             <Text>How many people live in your house?</Text>
             <TextInput
             placeholder="Enter here"
             onChangeText={(text)=>{this.setState({people:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
             />
 
         <Button title="submit" onPress={()=> this.props.navigation.navigate('CarbonFootprint', {electricBill:this.state.electricBill, gasBill:this.state.gasBill,
