@@ -93,6 +93,7 @@ function WhatsCarbonFootprint({navigation}) {
   const staticImg = require("./assets/fonts/earth.png");
   return(
     <View style={{flex:1, justifyContent: "center", backgroundColor: '#b4cebd'}}>
+    <Text style={{color: '#083316', fontSize: 40, textAlign: "center", marginTop: 10}}> What is a carbon footprint? </Text>
     <Text style= {{color: '#083316', fontSize: 30, textAlign: "center", marginLeft: 50, marginRight: 50}}> A carbon footprint measures the impact you leave on the environment. 
     Your carbon footprint represents the volume of greenhouse gases that have directly and indirectly resulted from your actions.
      The food you eat, clothes you buy, things that you throw away, and how you commute to places all
