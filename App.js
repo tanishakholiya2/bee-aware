@@ -1,10 +1,60 @@
 import * as React from 'react';
-import { SafeAreaView, TextInput, Button, View, Text, Image } from 'react-native';import Calculator from './calculator.js';
-import CarbonFootprint from './carbonFootprintInfo.js';
+import { SafeAreaView, TextInput, Button, View, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import Calculator from './calculator.js';
+import CarbonFootprint from './carbonFootprintInfo.js';
+import { ImageBackground } from 'react-native-web';
+
+const goals = ["Have a fully vegetarian lunch today", "Walk back home from your school or office today",
+    "Replace all beef you eat today with chicken", "Turn down the heating by 1 degree today", 
+    "Shower under 7 minutes today", "Turn off the water when you brush your teeth today", 
+    "Turn off the water while cleaning the dishes today", "Do not charge your phone today if it is above 50%",
+    "Use a fan instead of air conditioning in your car today", "Carpool to school or office today", 
+    "Make sure to not waste any of the food you cook today"];
+
+
+function HomeScreen({navigation}) {
+  const staticImg = require("./assets/fonts/earth.png");
+  const beeImg = require("./assets/fonts/bee.png");
+  const txt = require("./assets/fonts/beeAware.png");
+
+  return (
+    <View style={{ flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd' }}>
+      <Text style = {{color: "#083316", fontSize: 50, fontFamily: 'blow', fontStyle: 'normal'}}>Bee Aware</Text>
+      <Text style = {{color: "#083316", fontSize: 25, fontFamily: 'blow', textAlign: 'center', marginLeft: 25, marginRight: 25}}>
+        Bee Aware is an app dedicated to reducing the carbon footprint we take on our planet, accomplished
+          through the education of the human impact on climate change and interactive goal setters.
+      </Text>
+      <Button
+        color="#083316"
+        title="Start"
+        onPress={() => navigation.navigate('Main',"")}
+      />
+      <Button style={{marginVertical:20}}
+        color="#083316"
+        title="Learn about carbon footprint"
+        onPress={() => navigation.navigate('Learn')}
+      />
+      <Image 
+        source = {staticImg}
+        style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
+       />
+      <Image 
+        source = {beeImg}
+        style={{width: 250, height: 250, position: 'absolute', left: 765, top: 10}}
+       />
+      <Image 
+        source = {txt}
+        style={{width: 234, height: 42, marginLeft: 15, marginTop: 15,position: 'absolute', left: 0, top: 0}}
+       />
+    </View>
+  );
+}
+
 function Learn({navigation}) {
+  const staticImg = require("./assets/fonts/earth.png");
   return(
     <View style={{flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd'}}>
       <Button
@@ -24,14 +74,26 @@ function Learn({navigation}) {
         title="Why does carbon footprint matter?"
         onPress={() => navigation.navigate('WhyShouldYouCare')}
       />
+
+      <Button
+        color="#083316"
+        title="Home"
+        onPress={() => navigation.navigate('Bee Aware')}
+      />
+
+      <Image 
+        source = {staticImg}
+        style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
+       />
     </View>
   )
 }
 
 function WhatsCarbonFootprint({navigation}) {
+  const staticImg = require("./assets/fonts/earth.png");
   return(
-    <View style={{flex:1, alignContent:'center', backgroundColor: '#b4cebd'}}>
-    <Text> A carbon footprint measures the impact you leave on the environment. 
+    <View style={{flex:1, justifyContent: "center", backgroundColor: '#b4cebd'}}>
+    <Text style= {{color: '#083316', fontSize: 30, textAlign: "center", marginLeft: 50, marginRight: 50}}> A carbon footprint measures the impact you leave on the environment. 
     Your carbon footprint represents the volume of greenhouse gases that have directly and indirectly resulted from your actions.
      The food you eat, clothes you buy, things that you throw away, and how you commute to places all
     contribute to your carbon footprint.
@@ -39,103 +101,93 @@ function WhatsCarbonFootprint({navigation}) {
     greenhouse gases in the atmosphere has reached a record high. 
     Carbon footprint is measured in metric tons of carbon dioxide equivalent.
     </Text>
+    <Image 
+        source = {staticImg}
+        style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
+       />
     </View>
   )
 }
 
 function HowToReduce({navigation}) {
+  const staticImg = require("./assets/fonts/earth.png");
   return(
-    <View style={{flex:1, backgroundColor: '#b4cebd'}}>
-    <Text> There are many ways you can help lower your carbon footprint and 
-      address the climate issue
+    <View style={{flex:1, justifyContent: "center", alignItems: "center", backgroundColor: '#b4cebd'}}>
+    <Text style= {{color: '#083316', fontSize: 30, marginBottom: 25}}> There are many ways you can lower your carbon footprint and 
+      address the climate issue:
     </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Opt for items with less packaging </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Compost food scrpas </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Swap to a plant based diet or decrease your meat consumption </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Don't waste food, save leftovers for later </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Turn off devices as soon as you are done using them</Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Bike or walk to school instead of taking a car </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Consider using renewable energy, such as solar or wind power</Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Reduce, reuse, and recycle </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Try growing vegetables in your garden </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Turn down the heat by 1 degree </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Take shorter showers </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Turn down the heat by 1 degree </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Turn off water when you brush your teeth </Text>
-    <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Buy responsibly made clothing, clothes that are made from recycled material or have an eco label</Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Opt for items with less packaging </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Compost food scrpas </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Swap to a plant based diet or decrease your meat consumption </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Don't waste food, save leftovers for later </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Turn off devices as soon as you are done using them</Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Bike or walk to school instead of taking a car </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Consider using renewable energy, such as solar or wind power</Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Reduce, reuse, and recycle </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Try growing vegetables in your garden </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Turn down the heat by 1 degree </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Take shorter showers </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Turn down the heat by 1 degree </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Turn off water when you brush your teeth </Text>
+    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Buy responsibly made clothing, clothes that are made from recycled material or have an eco label</Text>
+    <Image 
+        source = {staticImg}
+        style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
+       />
     </View>
   )
 }
 
 function WhyShouldYouCare({navigation}) {
+  const staticImg = require("./assets/fonts/earth.png");
   return(
     <View style={{flex:1, backgroundColor: '#b4cebd'}}>
-    <Text style={{marginBottom:15}}> 
+    <View style={{flex:1, justifyContent: "center", alignItems: "center", backgroundColor: '#b4cebd'}}>
+    <Text style= {{color: '#083316', fontSize: 18, marginBottom: 25, marginTop: 35, marginLeft: 25, marginRight: 25, textAlign: 'center'}}> 
       Reducing your carbon footprint can make a big impact on the environment.  
       Your carbon footprint measures how much greenhouse gases are emitted from your actions.
       Greenhouse gases contribute to the greenhouse effect, which is when the sun's warmth gets trapped
       in the atmosphere, causing global warming. When the atmosphere heats up, it collects, retains, and drops more water
       changing weather patterns and increasing the frequency of weather disasters.
     </Text>
-    <Text>
+    <Text style= {{color: '#083316', fontSize: 25, marginBottom: 25, marginTop: 25, textAlign: 'center'}}>
       Effects of climate change: 
     </Text> 
     <View style={{flex: 1}}>
-      <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Temperature rises and heat waves </Text>
-      <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} More droughts </Text>
-      <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} More wildfires </Text>
-      <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Decrease in fresh water quality and quantity </Text>
-      <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Floods</Text>
-      <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Higher extreme weather events</Text>
-      <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Sea level rise</Text>
-      <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Biodiversity loss </Text>
-      <Text style={{marginLeft:20, marginVertical:7}}>{'\u2022'} Ocean acidification </Text>
+      <Text style={{marginLeft:20, marginVertical:7, color: '#083316', textAlign: 'center', fontSize: 18}}>{'\u2022'} Temperature rises and heat waves </Text>
+      <Text style={{marginLeft:20, marginVertical:7, color: '#083316', textAlign: 'center',fontSize: 18}}>{'\u2022'} More droughts </Text>
+      <Text style={{marginLeft:20, marginVertical:7, color: '#083316', textAlign: 'center',fontSize: 18}}>{'\u2022'} More wildfires </Text>
+      <Text style={{marginLeft:20, marginVertical:7, color: '#083316', textAlign: 'center',fontSize: 18}}>{'\u2022'} Decrease in fresh water quality and quantity </Text>
+      <Text style={{marginLeft:20, marginVertical:7, color: '#083316', textAlign: 'center',fontSize: 18}}>{'\u2022'} Floods</Text>
+      <Text style={{marginLeft:20, marginVertical:7, color: '#083316', textAlign: 'center',fontSize: 18}}>{'\u2022'} Higher extreme weather events</Text>
+      <Text style={{marginLeft:20, marginVertical:7, color: '#083316', textAlign: 'center',fontSize: 18}}>{'\u2022'} Sea level rise</Text>
+      <Text style={{marginLeft:20, marginVertical:7, color: '#083316', textAlign: 'center',fontSize: 18}}>{'\u2022'} Biodiversity loss </Text>
+      <Text style={{marginLeft:20, marginVertical:7, color: '#083316', textAlign: 'center',fontSize: 18}}>{'\u2022'} Ocean acidification </Text>
     </View>
     </View>
-  )
-}
-
-
-function HomeScreen({navigation}) {
-  const staticImg = require("./assets/fonts/earth.png");
-  const beeImg = require("./assets/fonts/bee.png");
-  return (
-    <View style={{ flex:1, alignItems: 'center', backgroundColor: '#b4cebd' }}>
-      <Text style = {{color: "#083316", fontSize: 50, fontFamily: 'blow', fontStyle: 'normal', marginTop:30, marginBottom:30}}>Bee Aware</Text>
-      <Image
-        source = {beeImg}
-        style={{width:250, height:250}}
-      />
-      <Button
-        color="#083316"
-        title="Start"
-        onPress={() => navigation.navigate('Main')}
-      />
-      <Text style={{marginVertical:10}}></Text> 
-      <Button style={{marginVertical:20}}
-        color="#083316"
-        title="Learn about carbon footprint"
-        onPress={() => navigation.navigate('Learn')}
-      />
       <Image 
         source = {staticImg}
         style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
        />
+    
     </View>
-  );
+  )
 }
 
-function MainScreen({navigation}) {
+function MainScreen({navigation, route}) {
+  const goal = route.params;
+
   const staticImg = require("./assets/fonts/earth.png");
  
-  const goals = ["Have a fully vegetarian lunch today", "Walk back home from your school or office today",
-    "Replace all beef you eat today with chicken", "Turn down the heating by 1 degree today", 
-    "Shower under 7 minutes today", "Turn off the water when you brush your teeth today", 
-    "Turn off the water while cleaning the dishes today", "Do not charge your phone today if it is above 50%",
-    "Use a fan instead of air conditioning in your car today", "Carpool to school or office today", 
-    "Make sure to not waste any of the food you cook today"];
+  if((goal != "write personal goal here") && (goal != "{: 'write personal goal here'}") && (goal != "")
+        && (goal != " {str: 'write personal goal here'}") && goal !== undefined){
+    console.log("why am i here i shouldn't be here");
+    goals.push(goal);
+  }
 
-  const randInd = parseInt(Math.random()*goals.length);
+  for(let i = 0; i < goals.length; i++){
+    console.log(goals[i]);
+  }
 
   const [myText, setMyText] = React.useState(goals[3]);
   
@@ -143,7 +195,7 @@ function MainScreen({navigation}) {
     <View style={{flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd'}}>
       <Text style = {{color: '#083316', fontSize: 75, fontFamily: 'blow'}}>Today's Goal: </Text>
       <Text style = {{color: 'white', fontSize: 50 }}>
-        {myText}
+        {goals[parseInt(Math.random()*goals.length)]}
       </Text>
       <Button
         color="#083316"
@@ -179,7 +231,7 @@ function MainScreen({navigation}) {
 function SubmitPersonalScreen({navigation}) {
   const staticImg = require("./assets/fonts/earth.png");
   const [text, onChangeText] = React.useState("Useless Text");
-  const [number, onChangeNumber] = React.useState("write personal goal here");
+  const [number, onChangeNumber] = React.useState("");
   return(
     <View style={{flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd'}}>
         <Text style = {{color: '#083316', fontSize: 75, fontFamily: 'blow'}}>Submit Your Personal Goal: </Text>
@@ -197,7 +249,7 @@ function SubmitPersonalScreen({navigation}) {
         <Button 
             color="#083316"
             title = "Submit Goal"
-            onPress = {() => navigation.navigate('Main')} 
+            onPress = {() => navigation.navigate('Main', number)} 
         />
         
         <Image 
