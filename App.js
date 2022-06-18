@@ -238,7 +238,7 @@ function SubmitPersonalScreen({navigation}) {
         <Text style = {{color: '#083316', fontSize: 75, fontFamily: 'blow'}}>Submit Your Personal Goal: </Text>
         <SafeAreaView>
             <TextInput
-            style = {{width: 600, height: 100}}
+            style = {{width: 600, height: 100, borderColor:'black', borderWidth:3}}
             onChangeText={onChangeNumber}
             value={number}
             multiline = {true}

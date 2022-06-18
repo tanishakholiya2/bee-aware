@@ -71,14 +71,14 @@ class Calculator extends React.Component {
             <RadioButton
                 value="1"
                 unCheckedColor='white'
-                color='red'
+                color={'red'}
             />
             <Text> yes </Text>
             
             <RadioButton
                 value="2"
                 unCheckedColor='white'
-                color='red'
+                color={'red'}
             />
             <Text> no </Text>
             </View>
@@ -90,14 +90,14 @@ class Calculator extends React.Component {
             <RadioButton
                 value="1"
                 unCheckedColor='white'
-                color='red'
+                color={'red'}
             />
             <Text> yes </Text>
             
             <RadioButton
                 value="2"
                 unCheckedColor='white'
-                color='red'
+                color={'red'}
             />
             <Text> no </Text>
             </View>
@@ -108,27 +108,26 @@ class Calculator extends React.Component {
             <View style={{flexDirection:'row', justifyContent: 'space-between'}}>
             <RadioButton
                 value="1"
-                unCheckedColor='white'
-                color='red'
+                color={'red'}
             />
             <Text> never </Text>
             
             <RadioButton
                 value="2"
                 unCheckedColor='white'
-                color='red'
+                color={'red'}
             />  
             <Text> a few times a month </Text>
             <RadioButton
                 value="3"
                 unCheckedColor='white'
-                color='red'
+                color={'red'}
             />
             <Text> a few times a week </Text>
             <RadioButton
                 value="4"
                 unCheckedColor='white'
-                color='red'
+                color={'red'}
             />
             <Text> everyday </Text>
             </View>
