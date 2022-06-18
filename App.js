@@ -5,7 +5,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Calculator from './calculator.js';
 import CarbonFootprint from './carbonFootprintInfo.js';
-import { ImageBackground } from 'react-native-web';
 
 const goals = ["Have a fully vegetarian lunch today", "Walk back home from your school or office today",
     "Replace all beef you eat today with chicken", "Turn down the heating by 1 degree today", 
@@ -13,7 +12,6 @@ const goals = ["Have a fully vegetarian lunch today", "Walk back home from your 
     "Turn off the water while cleaning the dishes today", "Do not charge your phone today if it is above 50%",
     "Use a fan instead of air conditioning in your car today", "Carpool to school or office today", 
     "Make sure to not waste any of the food you cook today"];
-
 
 function HomeScreen({navigation}) {
   const staticImg = require("./assets/fonts/earth.png");
@@ -27,11 +25,41 @@ function HomeScreen({navigation}) {
         Bee Aware is an app dedicated to reducing the carbon footprint we take on our planet, accomplished
           through the education of the human impact on climate change and interactive goal setters.
       </Text>
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: -90}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 380}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 580}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 780}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 980}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 1180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+    
       <Button
         color="#083316"
         title="Start"
         onPress={() => navigation.navigate('Main',"")}
       />
+      
       <Button style={{marginVertical:20}}
         color="#083316"
         title="Learn about carbon footprint"
@@ -49,14 +77,44 @@ function HomeScreen({navigation}) {
         source = {txt}
         style={{width: 234, height: 42, marginLeft: 15, marginTop: 15,position: 'absolute', left: 0, top: 0}}
        />
+       
     </View>
   );
 }
 
 function Learn({navigation}) {
   const staticImg = require("./assets/fonts/earth.png");
+  const txt = require("./assets/fonts/beeAware.png");
   return(
     <View style={{flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd'}}>
+       <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: -90}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 380}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 580}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 780}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 980}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 1180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
       <Button
         color="#083316"
         title="What is a carbon footprint?"
@@ -85,15 +143,48 @@ function Learn({navigation}) {
         source = {staticImg}
         style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
        />
+
+      <Image 
+        source = {txt}
+        style={{width: 234, height: 42, marginLeft: 15, marginTop: 15,position: 'absolute', left: 0, top: 0}}
+       />
     </View>
   )
 }
 
 function WhatsCarbonFootprint({navigation}) {
   const staticImg = require("./assets/fonts/earth.png");
+  const txt = require("./assets/fonts/beeAware.png");
   return(
     <View style={{flex:1, justifyContent: "center", backgroundColor: '#b4cebd'}}>
-    <Text style={{color: '#083316', fontSize: 40, textAlign: "center", marginTop: 10}}> What is a carbon footprint? </Text>
+       <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: -90}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 380}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 580}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 780}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 980}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 1180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
     <Text style= {{color: '#083316', fontSize: 30, textAlign: "center", marginLeft: 50, marginRight: 50}}> A carbon footprint measures the impact you leave on the environment. 
     Your carbon footprint represents the volume of greenhouse gases that have directly and indirectly resulted from your actions.
      The food you eat, clothes you buy, things that you throw away, and how you commute to places all
@@ -106,15 +197,48 @@ function WhatsCarbonFootprint({navigation}) {
         source = {staticImg}
         style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
        />
+    <Image 
+        source = {txt}
+        style={{width: 234, height: 42, marginLeft: 15, marginTop: 15,position: 'absolute', left: 0, top: 0}}
+       />
     </View>
   )
 }
 
 function HowToReduce({navigation}) {
   const staticImg = require("./assets/fonts/earth.png");
+  const txt = require("./assets/fonts/beeAware.png");
   return(
     <View style={{flex:1, justifyContent: "center", alignItems: "center", backgroundColor: '#b4cebd'}}>
-    <Text style= {{color: '#083316', fontSize: 30, marginBottom: 25}}> There are many ways you can lower your carbon footprint and 
+       <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -110, left: -90}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -110, left: 180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -110, left: 380}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -110, left: 580}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -110, left: 780}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -110, left: 980}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -110, left: 1180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+    <Text style= {{color: '#083316', fontSize: 30, marginBottom: 25, marginTop: 50}}> There are many ways you can lower your carbon footprint and 
       address the climate issue:
     </Text>
     <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Opt for items with less packaging </Text>
@@ -128,12 +252,15 @@ function HowToReduce({navigation}) {
     <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Try growing vegetables in your garden </Text>
     <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Turn down the heat by 1 degree </Text>
     <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Take shorter showers </Text>
-    <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Turn down the heat by 1 degree </Text>
     <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Turn off water when you brush your teeth </Text>
     <Text style={{marginLeft:20, marginVertical:7, color: '#083316', fontSize: 18}}>{'\u2022'} Buy responsibly made clothing, clothes that are made from recycled material or have an eco label</Text>
     <Image 
         source = {staticImg}
         style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
+       />
+    <Image 
+        source = {txt}
+        style={{width: 234, height: 42, marginLeft: 15, marginTop: 15,position: 'absolute', left: 0, top: 0}}
        />
     </View>
   )
@@ -141,10 +268,39 @@ function HowToReduce({navigation}) {
 
 function WhyShouldYouCare({navigation}) {
   const staticImg = require("./assets/fonts/earth.png");
+  const txt = require("./assets/fonts/beeAware.png");
   return(
     <View style={{flex:1, backgroundColor: '#b4cebd'}}>
     <View style={{flex:1, justifyContent: "center", alignItems: "center", backgroundColor: '#b4cebd'}}>
-    <Text style= {{color: '#083316', fontSize: 18, marginBottom: 25, marginTop: 35, marginLeft: 25, marginRight: 25, textAlign: 'center', width:650}}> 
+    <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: -90}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 380}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 580}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 780}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 980}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 1180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+    <Text style= {{color: '#083316', fontSize: 18, marginBottom: 25, marginTop: 80, marginLeft: 25, marginRight: 25, textAlign: 'center'}}> 
       Reducing your carbon footprint can make a big impact on the environment.  
       Your carbon footprint measures how much greenhouse gases are emitted from your actions.
       Greenhouse gases contribute to the greenhouse effect, which is when the sun's warmth gets trapped
@@ -169,7 +325,11 @@ function WhyShouldYouCare({navigation}) {
       <Image 
         source = {staticImg}
         style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
-        />
+       />
+    <Image 
+        source = {txt}
+        style={{width: 234, height: 42, marginLeft: 15, marginTop: 15,position: 'absolute', left: 0, top: 0}}
+       />
     
     </View>
   )
@@ -177,7 +337,7 @@ function WhyShouldYouCare({navigation}) {
 
 function MainScreen({navigation, route}) {
   const goal = route.params;
-
+  const txt = require("./assets/fonts/beeAware.png");
   const staticImg = require("./assets/fonts/earth.png");
  
   if((goal != "write personal goal here") && (goal != "{: 'write personal goal here'}") && (goal != "")
@@ -186,15 +346,39 @@ function MainScreen({navigation, route}) {
     goals.push(goal);
   }
 
-  for(let i = 0; i < goals.length; i++){
-    console.log(goals[i]);
-  }
-
   const [myText, setMyText] = React.useState(goals[3]);
   
   return (
     <View style={{flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd'}}>
-      <Text style = {{color: '#083316', fontSize: 75, fontFamily: 'blow'}}>Today's Goal: </Text>
+       <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: -90}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 380}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 580}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 780}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 980}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 1180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Text style = {{color: '#083316', fontSize: 60, fontFamily: 'blow'}}>Today's Goal: </Text>
       <Text style = {{color: 'white', fontSize: 50 }}>
         {goals[parseInt(Math.random()*goals.length)]}
       </Text>
@@ -224,6 +408,11 @@ function MainScreen({navigation, route}) {
         source = {staticImg}
         style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
        />
+      
+      <Image 
+        source = {txt}
+        style={{width: 234, height: 42, marginLeft: 15, marginTop: 15,position: 'absolute', left: 0, top: 0}}
+       />
     </View>
   );
   
@@ -233,12 +422,41 @@ function SubmitPersonalScreen({navigation}) {
   const staticImg = require("./assets/fonts/earth.png");
   const [text, onChangeText] = React.useState("Useless Text");
   const [number, onChangeNumber] = React.useState("");
+  const txt = require("./assets/fonts/beeAware.png");
   return(
     <View style={{flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd'}}>
+       <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: -90}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 380}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 580}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 780}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 980}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
+      <Image
+            style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 1180}}
+            source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
+          />
         <Text style = {{color: '#083316', fontSize: 75, fontFamily: 'blow'}}>Submit Your Personal Goal: </Text>
         <SafeAreaView>
             <TextInput
-            style = {{width: 600, height: 100, borderColor:'black', borderWidth:3}}
+            style = {{width: 600, height: 100}}
             onChangeText={onChangeNumber}
             value={number}
             multiline = {true}
@@ -256,6 +474,11 @@ function SubmitPersonalScreen({navigation}) {
         <Image 
         source = {staticImg}
         style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
+       />
+
+      <Image 
+        source = {txt}
+        style={{width: 234, height: 42, marginLeft: 15, marginTop: 15,position: 'absolute', left: 0, top: 0}}
        />
     </View>
   )
