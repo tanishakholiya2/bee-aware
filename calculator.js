@@ -1,6 +1,6 @@
 import React from 'react';
 import {Stylesheet, Text, View, TextInput, ViewStyle, 
-TextStyle, TextInputProps, Button} from 'react-native';
+TextStyle, TextInputProps, Button, Image} from 'react-native';
 import { useState } from "react";
 import * as App from './App.js';
 
@@ -21,6 +21,7 @@ class Calculator extends React.Component {
         }
     }
     render() {
+        const staticImg = require("./assets/fonts/earth.png");
         return(
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#b4cebd'}}>
             <Text> What is your monthly electric bill?</Text>
@@ -88,6 +89,11 @@ class Calculator extends React.Component {
         oilBill:this.state.oilBill, mileage:this.state.mileage, flightsBelow:this.state.flightsBelow, flightsAbove: this.state.flightsAbove, 
         recycleNewspaper:this.state.recycleNewspaper, recycleAluminum:this.state.recycleAluminum, meat:this.state.meat, people:this.state.people,
         })} />
+
+        <Image 
+        source = {staticImg}
+        style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
+       />
         </View>
         )
     }
