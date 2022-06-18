@@ -1,7 +1,6 @@
 import React from 'react';
 import {Stylesheet, Text, View, TextInput, ViewStyle, 
-TextStyle, TextInputProps, Button, Image} from 'react-native';
-import {RadioButton} from 'react-native-paper';
+TextStyle, TextInputProps, Button} from 'react-native';
 import { useState } from "react";
 import * as App from './App.js';
 
@@ -21,133 +20,74 @@ class Calculator extends React.Component {
             people: 0,
         }
     }
-
-    
-
     render() {
-        const staticImg = require("./assets/fonts/earth.png");
         return(
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#b4cebd'}}>
-            <Text style={{fontSize:16}}> What is your monthly electric bill?</Text>
+        <View style={{flex:1, justifyContent: 'space-evenly', alignItems: 'center', backgroundColor: '#b4cebd'}}>
+            <Text style = {{color: '#083316', fontSize: 15}}> What is your monthly electric bill?</Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({electricBill:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
             />
-            <Text style={{fontSize:16}}> What is your monthly gas bill?</Text>
+            <Text style = {{color: '#083316', fontSize: 15}}> What is your monthly gas bill?</Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({gasBill:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
             />
-            <Text style={{fontSize:16}}> What is your monthly oil bill?</Text>
+            <Text style = {{color: '#083316', fontSize: 15}}> What is your monthly oil bill?</Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({oilBill:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
             />
-            <Text style={{fontSize:16}}> What is your car's yearly mileage?</Text>
+            <Text style = {{color: '#083316', fontSize: 15}}> What is your car's yearly mileage?</Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({mileage:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
             />
-            <Text style={{fontSize:16}}> How many flights under 4 hours have you taken in the last year? </Text>
+            <Text style = {{color: '#083316', fontSize: 15}}> How many flights under 4 hours have you taken in the last year? </Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({flightsBelow:text})}}
-            style={{width:500,borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
+            style={{width:500,borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
             />
-            <Text style={{fontSize:16}}> How many flights over 4 hours have you taken in the last year? </Text>
+            <Text style = {{color: '#083316', fontSize: 15}}> How many flights over 4 hours have you taken in the last year? </Text>
             <TextInput
             placeholder="Enter here" 
             onChangeText={(text)=>{this.setState({flightsAbove:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
             />
-
-            <Text style={{fontSize:16}}> Do you recycle newspaper? </Text>
-            <RadioButton.Group onValueChange={newValue => this.setState({recycleNewspaper:newValue})}>
-            <View style={{flexDirection:'row', justifyContent: 'space-between'}}>
-            <RadioButton
-                value="1"
-                unCheckedColor='white'
-                color={'red'}
+            <Text style = {{color: '#083316', fontSize: 15}}> Do you recycle newspaper? </Text>
+            <TextInput
+            placeholder="1 for yes, 2 for no" 
+            onChangeText={(text)=>{this.setState({recycleNewspaper:text})}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
             />
-            <Text> yes </Text>
-            
-            <RadioButton
-                value="2"
-                unCheckedColor='white'
-                color={'red'}
+            <Text style = {{color: '#083316', fontSize: 15}}> Do you recycle aluminum? </Text>
+            <TextInput
+            placeholder="1 for yes, 2 for no" 
+            onChangeText={(text)=>{this.setState({recycleAluminum:text})}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
             />
-            <Text> no </Text>
-            </View>
-            </RadioButton.Group>
-
-            <Text style={{fontSize:16}}> Do you recycle aluminum? </Text>
-            <RadioButton.Group onValueChange={newValue => this.setState({recycleAluminum:newValue})}>
-            <View style={{flexDirection:'row', justifyContent: 'space-between'}}>
-            <RadioButton
-                value="1"
-                unCheckedColor='white'
-                color={'red'}
+            <Text style = {{color: '#083316', fontSize: 15}}> How often do you eat meat? </Text>
+            <TextInput
+            placeholder="1 for never, 2 for a few times a month, 2 for a few times a week, 4 for everyday" 
+            onChangeText={(text)=>{this.setState({meat:text})}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
             />
-            <Text> yes </Text>
-            
-            <RadioButton
-                value="2"
-                unCheckedColor='white'
-                color={'red'}
-            />
-            <Text> no </Text>
-            </View>
-            </RadioButton.Group>
-            
-            <Text style={{fontSize:16}}> How often do you eat meat? </Text>
-            <RadioButton.Group onValueChange={newValue => this.setState({meat:newValue})}>
-            <View style={{flexDirection:'row', justifyContent: 'space-between'}}>
-            <RadioButton
-                value="1"
-                color={'red'}
-            />
-            <Text> never </Text>
-            
-            <RadioButton
-                value="2"
-                unCheckedColor='white'
-                color={'red'}
-            />  
-            <Text> a few times a month </Text>
-            <RadioButton
-                value="3"
-                unCheckedColor='white'
-                color={'red'}
-            />
-            <Text> a few times a week </Text>
-            <RadioButton
-                value="4"
-                unCheckedColor='white'
-                color={'red'}
-            />
-            <Text> everyday </Text>
-            </View>
-            </RadioButton.Group>
-            <Text style={{fontSize:16}}>How many people live in your house?</Text>
+            <Text style = {{color: '#083316', fontSize: 15}}>How many people live in your house?</Text>
             <TextInput
             placeholder="Enter here"
             onChangeText={(text)=>{this.setState({people:text})}}
-            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:15, marginHorizontal: 15}}
+            style={{width:500, borderWidth:2, borderColor:'skyBlue', marginTop:5, marginBottom:5, marginHorizontal: 15}}
             />
 
-        <Button title="submit" onPress={()=> this.props.navigation.navigate('CarbonFootprint', {electricBill:this.state.electricBill, gasBill:this.state.gasBill,
+        <Button color= '#083316' title="SUBMIT" onPress={()=> this.props.navigation.navigate('CarbonFootprint', {electricBill:this.state.electricBill, gasBill:this.state.gasBill,
         oilBill:this.state.oilBill, mileage:this.state.mileage, flightsBelow:this.state.flightsBelow, flightsAbove: this.state.flightsAbove, 
         recycleNewspaper:this.state.recycleNewspaper, recycleAluminum:this.state.recycleAluminum, meat:this.state.meat, people:this.state.people,
         })} />
-
-        <Image 
-        source = {staticImg}
-        style={{width: 250, height: 250, position: 'absolute', right: 0, bottom: 0}}
-       />
         </View>
         )
     }
