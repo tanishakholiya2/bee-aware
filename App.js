@@ -185,6 +185,7 @@ function WhatsCarbonFootprint({navigation}) {
             style ={{width: "30%", height:"30%", position: 'absolute', bottom: -20, left: 1180}}
             source={{ uri : "https://i.pinimg.com/originals/9b/d8/1b/9bd81b44964934c34b99a0548c1b67c2.gif"}}
           />
+    <Text style={{color: '#083316', fontSize: 30, marginBottom: 25, marginTop: 50, textAlign: "center"}}> What is a carbon footprint? </Text>
     <Text style= {{color: '#083316', fontSize: 30, textAlign: "center", marginLeft: 50, marginRight: 50}}> A carbon footprint measures the impact you leave on the environment. 
     Your carbon footprint represents the volume of greenhouse gases that have directly and indirectly resulted from your actions.
      The food you eat, clothes you buy, things that you throw away, and how you commute to places all
@@ -456,7 +457,7 @@ function SubmitPersonalScreen({navigation}) {
         <Text style = {{color: '#083316', fontSize: 75, fontFamily: 'blow'}}>Submit Your Personal Goal: </Text>
         <SafeAreaView>
             <TextInput
-            style = {{width: 600, height: 100}}
+            style = {{width: 600, height: 100, borderWidth:3}}
             onChangeText={onChangeNumber}
             value={number}
             multiline = {true}
